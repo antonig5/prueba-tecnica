@@ -85,6 +85,7 @@ export default function Home() {
       });
   };
   const handleEdit = (values) => {
+    console.log(values);
     fetch(`http://localhost:8080/api/poyects/${dataEdit._id}`, {
       method: "PUT",
       headers: {
@@ -400,18 +401,17 @@ export default function Home() {
           >
             <Input />
           </Form.Item>
+          <Form.Item
+            wrapperCol={{
+              offset: 8,
+              span: 16,
+            }}
+          >
+            <Button type="primary" htmlType="submit">
+              Submit
+            </Button>
+          </Form.Item>
         </Form>
-
-        <Form.Item
-          wrapperCol={{
-            offset: 8,
-            span: 16,
-          }}
-        >
-          <Button type="primary" htmlType="submit">
-            Submit
-          </Button>
-        </Form.Item>
       </Modal>
       <Modal
         title="Detalles del Proyecto"
@@ -430,21 +430,7 @@ export default function Home() {
         )}
       </Modal>
       <Modal title="Editar Proyecto" open={isModaEdit} onCancel={handleCancel}>
-        <Form
-          form={form}
-          name="basic"
-          labelCol={{
-            span: 8,
-          }}
-          wrapperCol={{
-            span: 16,
-          }}
-          style={{
-            maxWidth: 600,
-          }}
-          autoComplete="off"
-          onFinish={handleEdit}
-        >
+        <Form form={form} name="edit" onFinish={handleEdit}>
           <Form.Item
             name="system_name"
             rules={[
@@ -545,18 +531,17 @@ export default function Home() {
           >
             <Input />
           </Form.Item>
+          <Form.Item
+            wrapperCol={{
+              offset: 8,
+              span: 16,
+            }}
+          >
+            <Button type="primary" htmlType="submit">
+              Submit
+            </Button>
+          </Form.Item>
         </Form>
-
-        <Form.Item
-          wrapperCol={{
-            offset: 8,
-            span: 16,
-          }}
-        >
-          <Button type="primary" htmlType="submit">
-            Submit
-          </Button>
-        </Form.Item>
       </Modal>
 
       <div>
