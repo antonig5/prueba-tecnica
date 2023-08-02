@@ -11,6 +11,10 @@ yarn dev
 # or
 pnpm dev
 ```
+## Run server 
+node api/app.js
+# or
+npx nodemon api/app.js
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
